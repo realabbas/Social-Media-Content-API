@@ -1,5 +1,3 @@
-/* tslint:disable:no-console */
-
 // import { IgApiClient } from "instagram-private-api";
 
 const readFile = require("fs").readFile;
@@ -14,17 +12,17 @@ const readFileAsync = promisify(readFile);
 async function login() {
   // basic login-procedure
 
-  ig.state.generateDevice("amazon_india_deals_");
+  ig.state.generateDevice(YOUR_USERNAME);
 
   ig.state.proxyUrl = process.env.IG_PROXY;
 
-  await ig.account.login("amazon_india_deals_", "vintageVRT5");
+  await ig.account.login(YOUR_USERNAME, YOUR_PASSWORD);
 }
 
 (async () => {
   await login();
 
-  const path = "./image.jpg";
+  const path = FILE_PATH;
 
   const { latitude, longitude, searchQuery } = {
     latitude: 0.0,
